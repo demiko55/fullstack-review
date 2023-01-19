@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-const Search = ({ onSearch }) => {
+const Search = ({ onSearch, update }) => {
 
   const[term, setTerm] = useState('')
 
   const onChange = (e) => {
     setTerm(e.target.value);
+    update(e.target.value);
   }
 
   const search = () => {
