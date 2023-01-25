@@ -42,7 +42,8 @@ const App = () => {
       contentType: 'application/json',
       success: function(data){
         console.log('ajax get response data after post', data);
-        setRepos(data);
+        getAllRepos();
+        //setRepos(data);//this setRepos will show the user's repos after added, but maybe they want us to show the top 25 of the whole repos, not just the specific user's repos
       }
     })
     console.log(`${term} was searched`);
@@ -51,7 +52,7 @@ const App = () => {
   const update = (term)=>{
     console.log('update term', term);
     let url = 'http://localhost:1128/userrepos';
-    axios.get(url, {params: {username: term}})
+    axios.get(url, {params: {username: term}})//params will be send as the req.query
     .then(res=>{
       //console.log(res);
       setRepos(res.data);

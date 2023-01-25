@@ -6,7 +6,7 @@ const Search = ({ onSearch, update }) => {
 
   const onChange = (e) => {
     setTerm(e.target.value);
-    update(e.target.value);
+    update(e.target.value);//Do we need this? everytime we type something in the input, it will automatically search the input value's repo from mongodb.
   }
 
   const search = () => {
